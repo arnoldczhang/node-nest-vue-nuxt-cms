@@ -9,6 +9,7 @@ English | [简体中文](./README.zh-CN.md)
 ### MySql
 
 1. Create the `nest_cms_api` table;
+`CREATE DATABASE IF NOT EXISTS nest_cms_api DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci`;
 
 2. Use MySql command or management software to import the `.sql` file in the `DB` directory.
 
