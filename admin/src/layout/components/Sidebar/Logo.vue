@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      title: "极倍 CMS",
+      title: "风朵系统",
       logo: logo
     };
   }

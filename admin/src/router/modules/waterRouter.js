@@ -2,21 +2,27 @@
 
 import Layout from '@/layout'
 
-const homeRouter = {
-  path: '/home',
+const waterRouter = {
+  path: '/water',
   component: Layout,
   redirect: '/user/list',
-  name: 'Home',
+  name: 'waterHome',
   meta: {
-    title: 'home',
+    title: 'water',
     icon: 'component',
   },
   children: [
     {
-      path: 'dashboard',
-      component: () => import('@/views/dashboard/index'),
-      name: 'Dashboard',
-      meta: { title: 'home', affix: true },
+      path: 'log',
+      component: () => import('@/views/home/about/list'),
+      name: 'waterLog',
+      meta: { title: 'waterLog', affix: true },
+    },
+    {
+      path: 'list',
+      component: () => import('@/views/product/category/list'),
+      name: 'waterBehavior',
+      meta: { title: 'waterBehavior', affix: true },
     },
     // {
     //   path: 'banner/list',
@@ -46,22 +52,22 @@ const homeRouter = {
     //   breadcrumb: false,
     //   meta: { title: 'bannerUpdate', noCache: true },
     // },
-    // {
-    //   path: 'about/create',
-    //   hidden: true,
-    //   component: () => import('@/views/home/about/create'),
-    //   name: 'HomeAboutCreate',
-    //   breadcrumb: false,
-    //   meta: { title: 'homeAboutCreate', noCache: true },
-    // },
-    // {
-    //   path: 'about/update',
-    //   component: () => import('@/views/home/about/update'),
-    //   hidden: true,
-    //   name: 'HomeAboutUpdate',
-    //   breadcrumb: false,
-    //   meta: { title: 'homeAboutUpdate', noCache: true },
-    // },
+    {
+      path: 'about/create',
+      hidden: true,
+      component: () => import('@/views/home/about/create'),
+      name: 'waterCreate',
+      breadcrumb: false,
+      meta: { title: 'homeAboutCreate', noCache: true },
+    },
+    {
+      path: 'about/update',
+      component: () => import('@/views/home/about/update'),
+      hidden: true,
+      name: 'waterUpdate',
+      breadcrumb: false,
+      meta: { title: 'homeAboutUpdate', noCache: true },
+    },
   ],
 }
-export default homeRouter
+export default waterRouter

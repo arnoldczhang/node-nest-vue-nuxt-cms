@@ -14,6 +14,8 @@ import aboutRouter from './modules/about'
 import userRouter from './modules/user'
 import productRouter from './modules/product'
 import homeRouter from './modules/home'
+import algorithmRouter from './modules/algorithm'
+import waterRouter from './modules/waterRouter'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -80,10 +82,12 @@ export const constantRoutes = [
     children: [],
   },
   homeRouter,
-  aboutRouter,
+  algorithmRouter,
+  waterRouter,
+  // aboutRouter,
 
-  productRouter,
-  userRouter,
+  // productRouter,
+  // userRouter,
 ]
 
 /**

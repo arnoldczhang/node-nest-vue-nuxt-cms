@@ -123,6 +123,15 @@
       :limit.sync="listQuery.limit"
       @pagination="getList"
     />
+    <el-dialog
+      :visible.sync="createDialogVisible"
+    >
+      <create-update
+        type="create"
+        @create-success="handleUpdateList"
+        @update-success="handleUpdateList"
+      />
+    </el-dialog>
   </div>
 </template>
 
@@ -133,12 +142,14 @@ import { fetchList as fetchCategoryList } from '@/api/product-category'
 import waves from '@/directive/waves' // waves directive
 import { formatDate, listToObject, baseHost } from '@/utils'
 import Pagination from '@/components/Pagination' // secondary package based on el-pagination
+import CreateUpdate from "./components/CreateUpdate";
 
 let categoryList = {}
 export default {
   name: 'ProductList',
   components: {
     Pagination,
+    CreateUpdate,
   },
   directives: {
     waves,
@@ -175,6 +186,7 @@ export default {
       },
       downloadLoading: false,
       selectedRows: [],
+      createDialogVisible: false,
     }
   },
   watch: {
@@ -189,6 +201,10 @@ export default {
     await this.getList()
   },
   methods: {
+    handleUpdateList() {
+      this.createDialogVisible = false;
+      this.getList();
+    },
     // 列表
     getList() {
       this.listLoading = true
@@ -221,7 +237,7 @@ export default {
 
     // 添加事件
     handleCreate() {
-      this.$router.push(`${config.routePath}create`)
+      this.createDialogVisible = true;
     },
 
     // 编辑信息

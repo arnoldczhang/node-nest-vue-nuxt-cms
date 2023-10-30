@@ -68,7 +68,7 @@
         </ckeditor>
       </el-form-item>
     </el-form>
-    <div class="fixed--footer">
+    <div>
       <el-button type="primary" id="editor" @click="submitForm('validateForm')"
         >提交</el-button
       >
@@ -289,9 +289,10 @@ export default {
           duration: 1000,
         })
 
-        setTimeout(() => {
-          this.$router.push(`${routePath}list`)
-        }, 1000)
+        this.$emit('create-success');
+        // setTimeout(() => {
+        //   this.$router.push(`${routePath}list`)
+        // }, 1000)
       })
     },
 
@@ -306,9 +307,10 @@ export default {
           duration: 1000,
         })
 
-        setTimeout(() => {
-          this.$router.push(`${routePath}list`)
-        }, 1000)
+        this.$emit('update-success');
+        // setTimeout(() => {
+        //   this.$router.push(`${routePath}list`)
+        // }, 1000)
       })
     },
 

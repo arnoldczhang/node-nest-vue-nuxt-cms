@@ -1,6 +1,12 @@
 export default {
   route: {
     dashboard: '仪表盘',
+    algorithm: '算法安全',
+    algorithmLog: '日志记录',
+    algorithmBehavior: '异常行为',
+    water: '水质检测',
+    waterLog: '日志记录',
+    waterBehavior: '水质检测',
     documentation: '文档',
     guide: '引导页',
     permission: '权限测试页',

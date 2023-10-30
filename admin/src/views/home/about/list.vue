@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <div class="filter-container">
+    <!-- <div class="filter-container">
       <div class="filter-container__search">
         <el-input
           v-model="listQuery.keyword"
@@ -29,7 +29,7 @@
           {{ $t('table.add') }}
         </el-button>
       </div>
-    </div>
+    </div> -->
     <el-table
       :key="tableKey"
       v-loading="listLoading"

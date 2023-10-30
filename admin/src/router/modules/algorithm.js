@@ -2,21 +2,28 @@
 
 import Layout from '@/layout'
 
-const homeRouter = {
-  path: '/home',
+const algorithmRouter = {
+  path: '/algorithm',
   component: Layout,
   redirect: '/user/list',
-  name: 'Home',
+  name: 'AlgorithmHome',
   meta: {
-    title: 'home',
+    title: 'algorithm',
     icon: 'component',
   },
   children: [
     {
-      path: 'dashboard',
-      component: () => import('@/views/dashboard/index'),
-      name: 'Dashboard',
-      meta: { title: 'home', affix: true },
+      path: 'log',
+      component: () => import('@/views/home/about/list'),
+      name: 'AlgorithmLog',
+      meta: { title: 'algorithmLog', affix: true },
+    },
+    // 异常行为
+    {
+      path: 'list',
+      component: () => import('@/views/product/list'),
+      name: 'AlgorithmBehavior',
+      meta: { title: 'algorithmBehavior', affix: true },
     },
     // {
     //   path: 'banner/list',
@@ -46,22 +53,22 @@ const homeRouter = {
     //   breadcrumb: false,
     //   meta: { title: 'bannerUpdate', noCache: true },
     // },
-    // {
-    //   path: 'about/create',
-    //   hidden: true,
-    //   component: () => import('@/views/home/about/create'),
-    //   name: 'HomeAboutCreate',
-    //   breadcrumb: false,
-    //   meta: { title: 'homeAboutCreate', noCache: true },
-    // },
-    // {
-    //   path: 'about/update',
-    //   component: () => import('@/views/home/about/update'),
-    //   hidden: true,
-    //   name: 'HomeAboutUpdate',
-    //   breadcrumb: false,
-    //   meta: { title: 'homeAboutUpdate', noCache: true },
-    // },
+    {
+      path: 'about/create',
+      hidden: true,
+      component: () => import('@/views/home/about/create'),
+      name: 'AlgorithmCreate',
+      breadcrumb: false,
+      meta: { title: 'homeAboutCreate', noCache: true },
+    },
+    {
+      path: 'about/update',
+      component: () => import('@/views/home/about/update'),
+      hidden: true,
+      name: 'AlgorithmUpdate',
+      breadcrumb: false,
+      meta: { title: 'homeAboutUpdate', noCache: true },
+    },
   ],
 }
-export default homeRouter
+export default algorithmRouter
